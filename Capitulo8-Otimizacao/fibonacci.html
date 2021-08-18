@@ -1,0 +1,204 @@
+<!doctype html public "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+  <head>
+    <title>M&eacute;todos Unimodais e Univari&aacute;veis [Fibonacci]</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+    
+<style type="text/css">
+ body {font: normal 11px verdana, sans-serif; color: #333; line-height: 19px;}
+ a { text-decoration: underline; color: #46546C; }
+ a:hover { text-decoration: underline; color: #4d77c3; }
+ #tree1 {width:250px;padding: 10px;float:left;}
+ #tree2 {width:250px;padding: 10px;float:left;}
+ #tree3 {width:250px;padding: 10px;float:left;}
+</style> 
+        
+  </head>
+  <body>
+    <div>
+      <h1>M&eacute;todos Unimodais e Univari&aacute;veis [Fibonacci]</h1>
+     
+		<table width=600 cellpadding=8 cellspacing=0 border=0>
+		<tr>
+			<td>
+				f(x) = <input type="text" id="equacao" size=40>
+			</td>
+			<td>
+				<SELECT name="func" id="func">
+					<OPTION VALUE="1">m&aacute;ximo</OPTION>
+					<OPTION VALUE="2">m&iacute;nimo</OPTION>
+				</SELECT>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Intervalo: [<input type="text" id="int-min" size=1>, <input type="text" id="int-max" size=1>]
+			</td>
+			<td>
+				Precis&atilde;o (em %): <input type="text" id="prec" size=2>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				 <button onclick="bissect()">Calcular</button>
+			</td>
+		</tr>
+		</table>
+    </div>
+	 <br/>
+	 <br/>
+    <table id="resultado" border=1 cellspacing=0>
+    </table>
+
+    <script type="text/javascript">
+		// facilitadores para selecionar elementos do html
+		
+		function $(id) { return document.getElementById(id) }
+		function $v(id) { return $(id).value }
+		
+		// funções para serem usadas dentro da equação (podem ser escritas usando o "Math." na frente, isso é pra facilitar)
+		function pow(x,y) { return Math.pow(x,y) }
+		function abs(x) { return Math.abs(x) }
+		
+		function bissect() {
+			f_string = $v("equacao") // pega a função escrita no textarea
+			eval("function f(x) { return(" + f_string + ")}") // cria a função f
+			
+			/* Incialização de contador de iterações, intervalo e precisão */
+			i = 0
+			a = Number($v("int-min"))
+			b = Number($v("int-max"))
+			e = Number($v("prec"))/100
+			tipo = Number($v("func"))
+			
+			e = (b-a)*e  
+			
+			x = a  // valor inicial para x (somente usado para incializar o x_ant)
+			resultado = $('resultado') // tabela onde o resultado vai ser escrito
+			
+			resultado.innerHTML = "<tr><th width=120 text-align=center bgcolor=#DDDDDD>a</th><th width=120 text-align=center bgcolor=#DDDDDD>b - p</th><th width=120 text-align=center bgcolor=#DDDDDD>a + p</th><th width=120 text-align=center bgcolor=#DDDDDD>b</th></tr><tr><td bgcolor=#333 colspan=5></td></tr>";
+			
+			
+			//Monta o array de fibonacci
+			qtd_fibonacci = 20//tamanho do array fibonacci
+			fibonacci = new Array()
+			fibonacci[0]=1
+			fibonacci[1]=1
+			
+			for (aux = 2; aux <= qtd_fibonacci; aux++)
+			{
+				fibonacci[aux]= fibonacci[aux-2] + fibonacci[aux-1];
+			}
+			
+			//Determina o valor inicial da serie de fibonacci
+			f0 = (b - a)/e
+			for(aux2=0; aux2<=qtd_fibonacci-1; aux2++)
+			{
+				if((fibonacci[aux2]<=f0) && (fibonacci[aux2+1]>f0))
+				{
+					if(f0-fibonacci[aux2]<fibonacci[aux2+1]-f0)
+					{
+						f0=fibonacci[aux2]
+						posicao = aux2
+					}
+					else
+					{
+						f0=fibonacci[aux2+1]
+						posicao=aux2+1
+					}
+				}
+			}
+			
+			//Correção inicial da precisao
+			e0 = (b-a)/f0;
+			
+			/* Calcula efetivamente cada iteração */
+			while ( (b-a) > e )
+			{
+			
+				p = fibonacci[posicao-1] * e0;
+				
+				p1 = a;
+				p2 = b - p;
+				p3 = p;
+				p4 = a + p;
+				p5 = b;
+				
+				/*p1 = p1.toFixed(4);
+				p2 = p2.toFixed(4);
+				p3 = p3.toFixed(4);
+				p4 = p4.toFixed(4);
+				p5 = p5.toFixed(4);*/
+				
+				cor1="#FFFFFF";
+				cor2="#FFFFFF";
+				cor3="#FFFFFF";
+				cor4="#FFFFFF";
+				corDestaque="#FFFFAA";
+				
+				if( tipo == 1)
+				{
+					if(f(p4) <= f(p2))
+					{
+						b = p4;
+						//cor3=corDestaque;
+						cor4=corDestaque;
+					}
+					else
+					{
+						a = p2;
+						cor1=corDestaque;
+						//cor2=corDestaque;
+					}
+				}
+				else
+				{
+					if(f(p4) >= f(p2))
+					{
+						b = p4;
+						//cor3=corDestaque;
+						cor4=corDestaque;
+					}
+					else
+					{
+						a = p2;
+						cor1=corDestaque;
+						//cor2=corDestaque;
+					}
+
+				}
+				posicao--;
+				
+				// Atualiza a tabela com os valores desta iteração com 4 dígitos significativos
+				resultado.innerHTML += 
+				"<tr align=right><td bgcolor=" + cor1 + ">"
+				+ p1.toFixed(4) +
+				"</td><td bgcolor=" + cor2 + ">"
+				+ p2.toFixed(4) +
+				"</td><td>"
+				//+ p3.toFixed(4) +
+				//"</td><td bgcolor=" + cor3 + ">"
+				+ p4.toFixed(4) +
+				"</td><td bgcolor=" + cor4 + ">"
+				+ p5.toFixed(4) +
+				"</td></tr>";
+				
+				resultado.innerHTML += 
+				"<tr align=right><td bgcolor=" + cor1 + ">"
+				+ f(p1).toFixed(4) +
+				"</td><td bgcolor=" + cor2 + ">"
+				+ f(p2).toFixed(4) +
+				"</td><td>"
+				//+ f(p3).toFixed(4) +
+				//"</td><td bgcolor=" + cor3 + ">"
+				+ f(p4).toFixed(4) +
+				"</td><td bgcolor=" + cor4 + ">"
+				+ f(p5).toFixed(4) +
+				"</td></tr>";
+				
+				resultado.innerHTML += "<tr><td bgcolor=#333 colspan=5></td></tr>";
+			}
+		}
+    </script>
+  </body>
+</html>
