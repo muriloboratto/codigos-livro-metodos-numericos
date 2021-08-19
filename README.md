@@ -67,9 +67,6 @@
   </ol>
 </details>
 
-
-
-<!-- ABOUT THE PROJECT -->
 ## Sobre este Livro
 
 Ministrando disciplinas relacionadas a métodos numéricos ao longo de 10 anos, há pouco tempo algumas perguntas começaram a permear os meus pensamentos, por exemplo: “por que escrever um livro de métodos numéricos?”. Consequentemente vieram outras perguntas como: “por que escrever um livro de métodos numéricos sendo que já existem tantos?”. “Como seria possível escrever um livro de métodos numéricos diferente?”. E talvez a resposta estivesse no desejo de transmitir as experiências pessoais, na espera de que elas fossem úteis para alguém. Como as disciplinas relacionadas a métodos numéricos, em sua grande maioria, esquecem-se do esforço de vincu- lação dos conceitos teóricos à aplicação prática nas ciências aplicadas, este texto tem o orgulho de desmistificar uma visão “demasiadamente teórica” em detrimento da aplicabilidade desses conceitos.
