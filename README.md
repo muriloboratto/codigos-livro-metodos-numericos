@@ -14,7 +14,7 @@
   </p>
 </p>
 
-<!-- TABLE OF CONTENTS -->
+
 <details open="open">
   <summary>Conteúdo</summary>
   <ol>
