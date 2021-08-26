@@ -2,10 +2,7 @@
 
 <br />
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
     <img src="capa_livro_metodos.png" alt="Capa" width="280" height="340">
-  </a>
-
   <h3 align="center">Livro de Métodos Numéricos e Computacionais</h3>
 
   <p align="center">
