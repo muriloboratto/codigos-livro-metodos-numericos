@@ -1,6 +1,5 @@
 
 
-<!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
@@ -15,7 +14,7 @@
   </p>
 </p>
 
-<!-- TABLE OF CONTENTS -->
+
 <details open="open">
   <summary>Conteúdo</summary>
   <ol>
@@ -68,16 +67,11 @@
   </ol>
 </details>
 
-
-
-<!-- ABOUT THE PROJECT -->
 ## Sobre este Livro
 
 Ministrando disciplinas relacionadas a métodos numéricos ao longo de 10 anos, há pouco tempo algumas perguntas começaram a permear os meus pensamentos, por exemplo: “por que escrever um livro de métodos numéricos?”. Consequentemente vieram outras perguntas como: “por que escrever um livro de métodos numéricos sendo que já existem tantos?”. “Como seria possível escrever um livro de métodos numéricos diferente?”. E talvez a resposta estivesse no desejo de transmitir as experiências pessoais, na espera de que elas fossem úteis para alguém. Como as disciplinas relacionadas a métodos numéricos, em sua grande maioria, esquecem-se do esforço de vincu- lação dos conceitos teóricos à aplicação prática nas ciências aplicadas, este texto tem o orgulho de desmistificar uma visão “demasiadamente teórica” em detrimento da aplicabilidade desses conceitos.
 
-Este livro-guia mescla minhas experiências nas disciplinas ministradas ao longo da minha docência universitária e das minhas práticas discentes experimentadas nos cursos de graduação e pós-graduação realizados durante a minha carreira acadêmica. Tentei apresentar um texto claro e objetivo, evitando sempre que possível a notação matemática carregada, na tentativa de generalizar o público alvo. Múltiplos exemplos de algoritmos foram incluídos nos capítulos a fim de permitir uma programação rápida dos métodos propostos. Compartilho com todos os estudantes, profissionais e pesquisadores das ciências exatas as diversas visões práticas dos métodos numéricos. A seguir alguns códigos fontes implementados nas diversas linguagens de programação (C/C++, matlab, python, ...) para as soluções de alguns exercícios contidos neste livro.
-
-
+Este livro-guia mescla minhas experiências nas disciplinas ministradas ao longo da minha docência universitária e das minhas práticas discentes experimentadas nos cursos de graduação e pós-graduação realizados durante a minha carreira acadêmica. Tentei apresentar um texto claro e objetivo, evitando sempre que possível a notação matemática carregada, na tentativa de generalizar o público alvo. Múltiplos exemplos de algoritmos foram incluídos nos capítulos a fim de permitir uma programação rápida dos métodos propostos. Compartilho com todos os estudantes, profissionais e pesquisadores das ciências exatas as diversas visões práticas dos métodos numéricos. A seguir alguns códigos fontes implementados principalmente na linguagem de programação python para as soluções de alguns exercícios contidos neste livro.
 
 
 <!-- ACKNOWLEDGEMENTS -->
