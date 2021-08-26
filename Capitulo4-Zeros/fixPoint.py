@@ -1,3 +1,22 @@
+# -*- coding: utf-8 -*-
+#****************************************************************************80
+#  Code: 
+#   fixPoint.py 
+#
+#  Purpose:
+#   Implement the Fix Point Method in Python
+#
+#  Modified:
+#   Aug 24 2021 16:34 
+#
+#  Author:
+#    Murilo Do Carmo Boratto < muriloboratto 'at' uneb.br >  
+#   
+#  How to Execute:
+#    python fixPoint.py 
+#   
+#*****************************************************************************
+
 import numpy as np
 
 def fixPoint(f, g, x0, tol):

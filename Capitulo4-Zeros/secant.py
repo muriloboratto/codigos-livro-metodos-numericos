@@ -1,3 +1,22 @@
+# -*- coding: utf-8 -*-
+#****************************************************************************80
+#  Code: 
+#   secant.py 
+#
+#  Purpose:
+#   Implement the Secant Method in Python
+#
+#  Modified:
+#   Aug 24 2021 16:34 
+#
+#  Author:
+#    Murilo Do Carmo Boratto < muriloboratto 'at' uneb.br >  
+#   
+#  How to Execute:
+#    python secant.py 
+#   
+#*****************************************************************************
+
 import numpy as np
 
 def secant(f, x0, x1, tol, max_iterations):

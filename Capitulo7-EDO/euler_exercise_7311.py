@@ -11,7 +11,7 @@
 #   Jul 25 2021 16:34 
 #
 #  Author:
-#    Murilo Do Carmo Boratto [muriloboratto@uneb.br]  
+#     Murilo Do Carmo Boratto < muriloboratto 'at' uneb.br >
 #   
 #  How to Execute:
 #    python euler_exercise_7311.py  

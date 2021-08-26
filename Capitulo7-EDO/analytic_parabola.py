@@ -10,7 +10,7 @@
 #   Aug 11 2021 16:34 
 #
 #  Author:
-#    Murilo Do Carmo Boratto [muriloboratto@uneb.br]  
+#     Murilo Do Carmo Boratto < muriloboratto 'at' uneb.br >
 #   
 #  How to Execute:
 #    python analytic_parabola.py 
