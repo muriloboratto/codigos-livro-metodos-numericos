@@ -7,7 +7,7 @@
 #   Implement the LU factorization in Python
 #
 #  Modified:
-#   Aug 30 2021 16:34 
+#   Set 02 2021 16:34 
 #
 #  Author:
 #    Murilo Do Carmo Boratto < muriloboratto 'at' uneb.br >  
