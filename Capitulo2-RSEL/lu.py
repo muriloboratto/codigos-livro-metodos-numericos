@@ -7,7 +7,7 @@
 #   Implement the LU factorization in Python
 #
 #  Modified:
-#   Aug 24 2021 16:34 
+#   Aug 30 2021 16:34 
 #
 #  Author:
 #    Murilo Do Carmo Boratto < muriloboratto 'at' uneb.br >  
@@ -17,22 +17,18 @@
 #
 #*****************************************************************************
 
-
 import pprint
-import scipy
-import scipy.linalg   # SciPy Linear Algebra Library
+import numpy as np
+import scipy.linalg as linalg 
 
-A = scipy.array([ [8,  2, 9 ], 
-	              [4,  9, 4 ], 
-	              [6,  7, 9 ] ])
+A = np.array([ [1,   2,  -1 ], 
+               [2,   3,  -2 ], 
+               [1,  -2,   1] ])
 
-P, L, U = scipy.linalg.lu(A)
+B = np.array([2, 3, 0])
 
-print "A:"
-pprint.pprint(A)
+LU = linalg.lu_factor(A) 
 
-print "L:"
-pprint.pprint(L)
+x = linalg.lu_solve(LU, B) 
+print "Solutions:\n", x
 
-print "U:"
-pprint.pprint(U)
